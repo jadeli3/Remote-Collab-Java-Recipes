@@ -67,7 +67,7 @@ public class Recipe {
 
     public String toCSV() {
         String[] recipe = new String[this.ingredients.size() + this.instructions.size() + 5];
-        recipe[0] = this.name;
+        recipe[0] = "\n" + this.name;
         recipe[1] = "|";
         for (int i = 0; i < this.ingredients.size(); i++) {
             recipe[i + 2] = this.ingredients.get(i);
