@@ -14,7 +14,7 @@ public class ViewRecipe {
         Recipe foundRecipe = null;
         while (foundRecipe == null) {
             System.out.println("");
-            System.out.println("Enter the name of a recipe, 'all' to view all recipes: ");
+            System.out.println("Enter the name of a recipe, or enter 'all' to view all recipes:");
             String name = reader.readLine();
             System.out.println("");
             if (name.toLowerCase().equals("all")) {
@@ -50,17 +50,16 @@ public class ViewRecipe {
             for (String ingredient : foundRecipe.getIngredients()) {
                 System.out.println(ingredient);
             }
+            int instruction = 0;
             System.out.println("");
             System.out.println("Instructions: ");
-            int instruction = 0;
+            System.out.println("Press enter to continue, or type 'exit' at any time to return to main menu");
             while (instruction < foundRecipe.getInstructions().size()) {
-                System.out.println("enter to continue or 'exit' ");
                 String exit = reader.readLine();
                 if (exit.toLowerCase().equals("exit")) {
                     break;
                 } else {
-                    System.out.println(foundRecipe.getInstructions().get(instruction));
-                    System.out.println("");
+                    System.out.println((instruction + 1) + "." + foundRecipe.getInstructions().get(instruction));
                     instruction++;
                 }
             }

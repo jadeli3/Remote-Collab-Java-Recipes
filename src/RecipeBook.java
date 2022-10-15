@@ -75,7 +75,7 @@ class RecipeBook {
                         }
                         break;
                     case "search":
-                        System.out.println("search");
+                        SearchRecipe.main(recipeBook);
                         break;
                     case "list":
                         recipeBook.forEach(recipe -> {
