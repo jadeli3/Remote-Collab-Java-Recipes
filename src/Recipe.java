@@ -3,11 +3,13 @@ import java.util.ArrayList;
 public class Recipe {
 
     private String name;
+    private String description;
     private ArrayList<String> ingredients;
     private ArrayList<String> instructions;
 
     public Recipe(String name) {
         this.name = name;
+        this.description = "";
         this.ingredients = new ArrayList<>();
         this.instructions = new ArrayList<>();
     }
@@ -18,6 +20,14 @@ public class Recipe {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
     }
 
     public ArrayList<String> getIngredients() {
@@ -54,6 +64,7 @@ public class Recipe {
 
     public String toString() {
         String recipe = "Recipe: " + this.name + "\n";
+        recipe += "Description: " + this.description + "\n";
         recipe += "Ingredients: \n";
         for (String ingredient : this.ingredients) {
             recipe += " " + ingredient + "\n";
@@ -66,17 +77,19 @@ public class Recipe {
     }
 
     public String toCSV() {
-        String[] recipe = new String[this.ingredients.size() + this.instructions.size() + 5];
+        String[] recipe = new String[this.ingredients.size() + this.instructions.size() + 6];
         recipe[0] = "\n" + this.name;
         recipe[1] = "|";
+        recipe[2] = this.description;
+        recipe[3] = "|";
         for (int i = 0; i < this.ingredients.size(); i++) {
-            recipe[i + 2] = this.ingredients.get(i);
+            recipe[i + 4] = this.ingredients.get(i);
         }
-        recipe[this.ingredients.size() + 2] = "|";
+        recipe[this.ingredients.size() + 4] = "|";
         for (int i = 0; i < this.instructions.size(); i++) {
-            recipe[i + this.ingredients.size() + 3] = this.instructions.get(i);
+            recipe[i + this.ingredients.size() + 5] = this.instructions.get(i);
         }
-        recipe[this.ingredients.size() + this.instructions.size() + 3] = "|";
+        recipe[this.ingredients.size() + this.instructions.size() + 5] = "|";
         return String.join(",", recipe);
 
     }

@@ -30,12 +30,16 @@ public class ImportRecipe {
                             case 0:
                                 recipes.add(new Recipe(currentRecipe[i]));
                                 break;
-                            // Ingredients
+                            // Description
                             case 1:
+                            recipes.get(recipes.size() - 1).setDescription(currentRecipe[i]);
+                                break;
+                            // Ingredients
+                            case 2:
                                 recipes.get(recipes.size() - 1).addIngredient(currentRecipe[i]);
                                 break;
                             // Instructions
-                            case 2:
+                            case 3:
                                 recipes.get(recipes.size() - 1).addInstruction(currentRecipe[i]);
                                 break;
                         }

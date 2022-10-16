@@ -14,6 +14,10 @@ public class SearchRecipe {
                 if(recipe.getName().toLowerCase().equals(recipe_search.toLowerCase())){
                     System.out.println("Recipe found: " + recipe_search);
                     found = 1;
+
+                    System.out.println("Description: ");
+                    System.out.println(recipe.getDescription());
+
                     System.out.println("Ingredients: ");
                     for (String ingredient : recipe.getIngredients()) {
                         System.out.println(ingredient);
@@ -32,6 +36,8 @@ public class SearchRecipe {
             int found = 0;
             for (Recipe recipe : recipeBook) {
                 System.out.println("Recipe name: " + recipe.getName());
+                System.out.println("Description: ");
+                System.out.println(recipe.getDescription());
                 System.out.println("Ingredients: ");
                 System.out.println(recipe.getIngredients());
                 System.out.println("Instructions: ");
@@ -43,6 +49,10 @@ public class SearchRecipe {
                 if(recipe.getName().toLowerCase().equals(recipe_search.toLowerCase())){
                     found = 1;
                     System.out.println("Recipe found: " + recipe_search);
+
+                    System.out.println("Description: ");
+                    System.out.println(recipe.getDescription());
+                    
                     System.out.println("Ingredients: ");
                     for (String ingredient : recipe.getIngredients()) {
                         System.out.println(ingredient);
