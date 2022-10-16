@@ -46,6 +46,8 @@ public class ViewRecipe {
             System.out.println("");
             System.out.println("Name:\n" + foundRecipe.getName());
             System.out.println("");
+            System.out.println("Description:\n" + foundRecipe.getDescription());
+            System.out.println("");
             System.out.println("Ingredients: ");
             for (String ingredient : foundRecipe.getIngredients()) {
                 System.out.println(ingredient);
